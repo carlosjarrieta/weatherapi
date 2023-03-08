@@ -10,23 +10,5 @@
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
   %body
     = render partial: 'layouts/common/svg'
-    .container
-      %header.d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-md-between.py-3.mb-4.border-bottom
-        %a.d-flex.align-items-center.col-md-3.mb-2.mb-md-0.text-dark.text-decoration-none{:href => "/"}
-          %svg.bi.me-2{"aria-label" => "Bootstrap", :height => "32", :role => "img", :width => "40"}
-            %use{"xlink:href" => "#bootstrap"}
-        %ul.nav.col-12.col-md-auto.mb-2.justify-content-center.mb-md-0
-          %li
-            %a.nav-link.px-2.link-secondary{:href => "#"} Home
-          %li
-            %a.nav-link.px-2.link-dark{:href => "#"} Features
-          %li
-            %a.nav-link.px-2.link-dark{:href => "#"} Pricing
-          %li
-            %a.nav-link.px-2.link-dark{:href => "#"} FAQs
-          %li
-            %a.nav-link.px-2.link-dark{:href => "#"} About
-        .col-md-3.text-end
-          %button.btn.btn-outline-primary.me-2{:type => "button"} Login
-          %button.btn.btn-primary{:type => "button"} Sign-up
+    = render partial: 'layouts/common/container'
     = yield
