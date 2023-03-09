@@ -72,4 +72,4 @@ end
 gem "haml", "~> 6.1"
 gem "haml-rails", "~> 2.1"
 
-gem "sidekiq", "~> 7.0"
+gem 'sidekiq', '~> 7.0', '>= 7.0.6'
