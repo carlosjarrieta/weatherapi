@@ -2,5 +2,5 @@ development:
   db_username: deploy
   db_password: openwin1976
 
-  api_url: 'https://api.weatherapi.com/v1/'
+  api_url: 'https://api.weatherapi.com/v1'
   api_key: '24f5b383dd1c43f781620612230803'
