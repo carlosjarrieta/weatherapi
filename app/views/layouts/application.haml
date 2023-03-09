@@ -11,4 +11,7 @@
   %body
     = render partial: 'layouts/common/svg'
     = render partial: 'layouts/common/container'
+    .notifications
+      %p= notice
+      %p= alert
     = yield
