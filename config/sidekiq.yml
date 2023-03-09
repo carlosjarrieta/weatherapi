@@ -1,0 +1,16 @@
+:dynamic: false
+:scheduler_dynamic: true
+:verbose: true
+:timeout: 30
+:pidfile: tmp/pids/sidekiq.pid
+:logfile: log/sidekiq.log
+
+development:
+  :concurrency: 2
+production:
+  :concurrency: 10
+
+:queues:
+  - [ users_emails, 1 ]
+:limits:
+  users_emails: 1
