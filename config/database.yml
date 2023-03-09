@@ -7,6 +7,8 @@ default: &default
 
 development:
   <<: *default
+  username: <%= YAML.load_file("#{Rails.root}/config/application.yml")[Rails.env]['db_username'] %>
+  password: <%= YAML.load_file("#{Rails.root}/config/application.yml")[Rails.env]['db_password'] %>
   database: weatherapi_development
 
 
