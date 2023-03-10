@@ -2,16 +2,20 @@
 %html
   %head
     %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
-    %title Weatherapi - Search
+    %title Weatherapi - Login
     %meta{:content => "width=device-width,initial-scale=1", :name => "viewport"}/
     = csrf_meta_tags
     = csp_meta_tag
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
+    :css
+      display: flex
+      align-items: center
+      padding-top: 40px
+      padding-bottom: 40px
+      background-color: #f5f5f5
     = javascript_include_tag "application", "data-turbo-track": "reload", defer: true
-  %body
+  %body.text-center
     .notifications
       %p= notice
       %p= alert
-    = render partial: 'layouts/common/svg'
-    = render partial: 'layouts/common/container'
     = yield

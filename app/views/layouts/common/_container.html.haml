@@ -4,10 +4,8 @@
       %svg.bi.me-2{"aria-label" => "Bootstrap", :height => "32", :role => "img", :width => "40"}
         %use{"xlink:href" => "#bootstrap"}
     %ul.nav.col-12.col-md-auto.mb-2.justify-content-center.mb-md-0
-      %li
-        %a.nav-link.px-2.link-dark{:href => "#"} Features
-      %li
-        %a.nav-link.px-2.link-dark{:href => "#"} Pricing
+      = image_tag('logo.png', class:'mb-4', :width => "200" )
     .col-md-3.text-end
-      %button.btn.btn-outline-primary.me-2{:type => "button"} Login
-      %button.btn.btn-primary{:type => "button"} Sign-up
+      %small.text-primary.me-1
+        = current_user.name
+      = link_to t('logout.logout'), destroy_user_session_path, class: 'btn btn-danger', data: { turbo_method: :delete }
