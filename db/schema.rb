@@ -15,11 +15,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_003210) do
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.string "name"
-    t.string "source"
     t.bigint "user_id", null: false
+    t.string "name_search", null: false
+    t.string "name", null: false
+    t.string "region"
+    t.string "country"
+    t.float "lat"
+    t.float "lon"
+    t.string "tz_id"
+    t.datetime "localtime"
+    t.float "temp_c"
+    t.float "temp_f"
+    t.string "icon"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_cities_on_name", unique: true
+    t.index ["name_search"], name: "index_cities_on_name_search", unique: true
     t.index ["user_id"], name: "index_cities_on_user_id"
   end
 

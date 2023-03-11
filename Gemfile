@@ -60,6 +60,8 @@ group :development do
   gem "web-console"
   gem "byebug"
   gem "letter_opener", "~> 1.8"
+  gem "awesome_print", "~> 1.9"
+  gem "annotate", "~> 3.2"
 end
 
 group :test do

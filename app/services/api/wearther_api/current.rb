@@ -11,6 +11,7 @@ module Api
         url_string = "%{api_url}/current.json?key=%{key}&q=%{city_name}&aqi=no" % {api_url: API_URL, key: API_KEY, city_name: city_name}
         url = URI(url_string)
         set_configuration(url)
+        city_info
       end
     end
   end
