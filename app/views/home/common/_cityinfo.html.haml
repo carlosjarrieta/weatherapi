@@ -1,12 +1,11 @@
+- city_presenter = CityPresenter.new(self, city)
 .list-group.w-auto
   %label.list-group-item.d-flex.gap-3
-    %input.form-check-input.flex-shrink-0{:checked => "checked", :style => "font-size: 1.375em;", :type => "checkbox", :value => ""}/
+    %span.bi-globe
     %span.pt-1.form-checked-content
-      %strong Finish sales report
+      %strong= t('city_name')
       %small.d-block.text-muted
-        %svg.bi.me-1{:height => "1em", :width => "1em"}
-          %use{"xlink:href" => "#calendar-event"}
-        1:00–2:00pm
+        = city_presenter.name
   %label.list-group-item.d-flex.gap-3
     %input.form-check-input.flex-shrink-0{:style => "font-size: 1.375em;", :type => "checkbox", :value => ""}/
     %span.pt-1.form-checked-content
