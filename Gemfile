@@ -62,6 +62,8 @@ group :development do
   gem "letter_opener", "~> 1.8"
   gem "awesome_print", "~> 1.9"
   gem "annotate", "~> 3.2"
+  # detect query N+1
+  gem "bullet", "~> 7.0"
 end
 
 group :test do
@@ -78,3 +80,5 @@ gem "redis", "~> 4.0"
 gem 'sidekiq', '~> 7.0', '>= 7.0.6'
 gem "devise", "~> 4.9"
 gem "i18n", "~> 1.12"
+
+

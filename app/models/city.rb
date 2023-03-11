@@ -30,6 +30,8 @@
 #
 class City < ApplicationRecord
   belongs_to :user
+  has_many :city_users, dependent: :destroy
+
   validate :country, :icon, :lat, :lon, :localtime, :name, :region, :temp_c, :temp_f, :tz_id
 
   before_create :downcase_name_search

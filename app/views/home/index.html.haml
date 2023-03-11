@@ -9,6 +9,5 @@
   %h2.text-danger= t('dashboard.logs')
   .row
     .col-md-12.col-sm-12
-
-
-
+      = turbo_frame_tag 'city_search'
+      -# = render partial: 'home/common/my_cities', locals: {my_cities: @my_cities}
