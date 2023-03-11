@@ -262,6 +262,7 @@ DEPENDENCIES
   devise (~> 4.9)
   haml (~> 6.1)
   haml-rails (~> 2.1)
+  i18n (~> 1.12)
   jbuilder
   jsbundling-rails
   letter_opener (~> 1.8)

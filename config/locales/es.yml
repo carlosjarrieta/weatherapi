@@ -17,3 +17,10 @@ es:
 
   dashboard:
     submit: 'Buscar'
+    city_name: 'Ciudad'
+    city_country: 'Pais'
+    city_temp_c: 'Grados centigrados'
+    city_temp_f: 'Grados Fahrenheit'
+    city_log: 'Longitud'
+    city_lat: 'Latitud'
+    city_add: "%{user} a consultado la ciudad de %{city}"

@@ -1,2 +1,1 @@
-= turbo_stream.append('city_info') do
-  = render partial: 'home/common/cityinfo', locals: { city: @city }
+= turbo_stream.update 'city_info', @city

@@ -10,5 +10,11 @@ class HomeController < ApplicationController
         @city = CityConverterHelper::Convert.new(Api::WeartherApi::Current.new(name_search), name_search, current_user.id).call
       end
     end
+
+    respond_to do |format|
+      format.turbo_stream do
+        render layout: false
+      end
+    end
   end
 end

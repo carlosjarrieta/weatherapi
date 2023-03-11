@@ -6,11 +6,31 @@ class CityPresenter < Struct.new(:scope, :city)
   end
 
   def id
-    city.id.to_s
+    city.id
   end
 
   def name
     city.name.present? ? city.name : ""
+  end
+
+  def country
+    city.country.present? ? city.country : ""
+  end
+
+  def temp_c
+    city.temp_c.present? ? city.temp_c : ""
+  end
+
+  def temp_f
+    city.temp_f.present? ? city.temp_f : ""
+  end
+
+  def lat
+    city.lat.present? ? city.lat : ""
+  end
+
+  def log
+    city.lon.present? ? city.lon : ""
   end
 
 

@@ -30,11 +30,20 @@
 #
 class City < ApplicationRecord
   belongs_to :user
+  validate :country, :icon, :lat, :lon, :localtime, :name, :region, :temp_c, :temp_f, :tz_id
 
   before_create :downcase_name_search
+  after_create_commit :send_notification
 
   def downcase_name_search
     self.name_search = self.name_search.downcase
   end
+
+  def send_notification
+    ActionCable.server.broadcast 'city_channel',{
+                                 message: I18n.t('dashboard.city_add', user:self.user.name, city: self.name),
+                                 date: self.created_at}
+  end
+
 
 end
