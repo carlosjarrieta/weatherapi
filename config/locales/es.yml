@@ -14,3 +14,6 @@ es:
     name: 'Nombre'
   logout:
     logout: 'Salir'
+
+  dashboard:
+    submit: 'Buscar'
