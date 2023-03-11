@@ -1,0 +1,19 @@
+es:
+  login:
+    email: 'Correo electronico'
+    password: 'contraseña'
+    sing_in: 'Login'
+    remember_me: 'Recuerdame'
+    please_sign_in: 'Ingresa tus credenciales'
+  sign_up:
+    signup: 'Crear una cuenta'
+    forgot_your_password: 'Perdiste tu contraseña?'
+    instruction: '¿No recibió las instrucciones de confirmación?'
+    confirm_password: 'confirmar contraseña'
+    username: 'Usuario'
+    name: 'Nombre'
+  logout:
+    logout: 'Salir'
+
+  dashboard:
+    submit: 'Buscar'

@@ -18,6 +18,9 @@ module Weatherapi
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("lib")
+    config.i18n.enforce_available_locales = false
+    config.i18n.available_locales = [:en, :es]
+    config.i18n.default_locale = :es
     config.active_job.queue_adapter = :sidekiq
   end
 end

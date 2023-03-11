@@ -1,6 +1,8 @@
-= form_tag home_search_path, class: 'row g-3 p-3' do
-  .col-auto
-    %label.visually-hidden{:for => "inputPassword2"} Password
-    = text_field_tag :name_city, nil, class: 'form-control'
-  .col-auto
-    = submit_tag 'Search', class: 'btn btn-primary'
+= content_tag(:div,nil, data:{controller: 'home'}) do
+  = form_tag home_search_path, class: 'row g-3 p-3' do
+    .col-auto
+      %label.visually-hidden{:for => "inputPassword2"} Password
+      = text_field_tag :name_city, nil, class: 'form-control',
+          data:{'home-target': 'city', action:'input->home#onKeyUp'}
+    .col-auto
+      = submit_tag t('dashboard.submit'), class: 'btn btn-primary', id: 'cmdSearch'

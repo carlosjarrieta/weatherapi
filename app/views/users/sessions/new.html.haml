@@ -1,0 +1,18 @@
+%main.form-signin.w-100.m-auto
+  = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+    = image_tag('logo.png', class:'mb-4', :width => "300" )
+    %h1.h3.mb-3.fw-normal
+      = t('login.please_sign_in')
+    .form-floating
+      = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: t('login.email'), class:'form-control'
+      = label_tag :email, t('login.email')
+    .form-floating
+      = f.password_field :password, autocomplete: "current-password", placeholder: t('login.password'), class:'form-control'
+      = label_tag :password, t('login.password')
+    .checkbox.mb-3
+      %label
+        %input{:type => "checkbox", :value => "remember-me"}/
+        = t('login.remember_me')
+    = f.submit t('login.sing_in'), class:"w-100 btn btn-lg btn-primary"
+    = render "users/shared/links"
+    %p.mt-5.mb-3.text-muted © 2017–2023
