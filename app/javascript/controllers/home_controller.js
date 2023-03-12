@@ -38,8 +38,13 @@ export default class extends Controller {
   }
 
   onKeyUp() {
+    let no_blank =new RegExp('^[^\\s]+$').test(this.cityTarget.value);
     let characters = this.cityTarget.value.length;
-    this.cmdSearchValue.disabled = characters <= 3 ? true : false
+    if (characters <= 3 || !no_blank ){
+      this.cmdSearchValue.disabled = true
+    }else{
+      this.cmdSearchValue.disabled = false;
+    }
   }
 
 
