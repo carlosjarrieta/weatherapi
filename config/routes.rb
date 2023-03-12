@@ -4,10 +4,10 @@ Rails.application.routes.draw do
     sessions: 'users/sessions',
     registrations: 'users/registrations',
   }
-  mount Sidekiq::Web => "/sidekiq"
-  # authenticate :user do
-  #   mount Sidekiq::Web => '/sidekiq'
-  # end
+  authenticate :user do
+    mount Sidekiq::Web => '/sidekiq'
+  end
   root to: 'home#index'
+  get 'home/index'
   post 'home/search'
 end

@@ -30,11 +30,11 @@
 #
 
 one:
-  name: MyString
-  source: MyString
+  name: "Bogota"
   user: one
+  name_search: "bogota"
 
 two:
-  name: MyString
-  source: MyString
+  name: "London"
   user: two
+  name_search: "london"

@@ -14,7 +14,7 @@
 #  index_cities_users_on_user_id  (user_id)
 #
 class CitiesUser < ApplicationRecord
-  after_create_commit { broadcast_prepend_to 'anoter_search' }
+  after_create_commit { broadcast_update_to 'anoter_search' }
 
   belongs_to :city
   belongs_to :user

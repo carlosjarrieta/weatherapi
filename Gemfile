@@ -53,12 +53,12 @@ gem "bootsnap", require: false
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "byebug"
 end
 
 group :development do
   # Use console on exceptions pages [https://github.com/rails/web-console]
   gem "web-console"
-  gem "byebug"
   gem "letter_opener", "~> 1.8"
   gem "awesome_print", "~> 1.9"
   gem "annotate", "~> 3.2"

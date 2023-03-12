@@ -6,13 +6,13 @@ export default class extends Controller {
   connect() {
     this.cmdSearchValue = document.getElementById('cmdSearch');
     this.cmdSearchValue.disabled = true;
-    consumer.subscriptions.create({channel: 'CityChannel', room: this.element.dataset.homeUseridValue}, {
-      received(data) {
-        console.log(data)
-      }
-    });
+    // consumer.subscriptions.create({channel: 'CityChannel', room: this.element.dataset.homeUseridValue}, {
+    //   received(data) {
+    //     console.log(data)
+    //   }
+    // });
   }
-  onKeyUp(event){
+  onKeyUp(){
     let characters = this.cityTarget.value.length;
     this.cmdSearchValue.disabled = characters <= 3 ? true: false
   }
