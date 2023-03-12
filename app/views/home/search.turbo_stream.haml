@@ -1,1 +1,3 @@
 = turbo_stream.update 'city_info', @city
+= turbo_stream.update 'my_searchs' do
+  = render partial: 'home/common/my_cities', locals: {my_cities: @my_cities}

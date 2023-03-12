@@ -1,11 +1,16 @@
 import { Controller } from "@hotwired/stimulus"
+import consumer from "../channels/consumer";
 
-// Connects to data-controller="home"
 export default class extends Controller {
   static targets = [ "city" ]
   connect() {
     this.cmdSearchValue = document.getElementById('cmdSearch');
     this.cmdSearchValue.disabled = true;
+    consumer.subscriptions.create({channel: 'CityChannel', room: this.element.dataset.homeUseridValue}, {
+      received(data) {
+        console.log(data)
+      }
+    });
   }
   onKeyUp(event){
     let characters = this.cityTarget.value.length;

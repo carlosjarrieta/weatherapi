@@ -33,6 +33,14 @@ class CityPresenter < Struct.new(:scope, :city)
     city.lon.present? ? city.lon : ""
   end
 
+  def icon
+    city.icon.present? ? city.icon : "https://github.com/twbs.png"
+  end
+
+  def created_at
+    city.created_at
+  end
+
 
   def method_missing(method, *args, &block)
     if scope.respond_to?(method)

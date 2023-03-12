@@ -1,43 +1,47 @@
 - city_presenter = CityPresenter.new(self, city)
-.list-group.w-auto
-  %label.list-group-item.d-flex.gap-3
-    %span.bi-globe
-    %span.pt-1.form-checked-content
-      %strong= t('dashboard.city_name')
-      %small.d-block.text-muted
-        = city_presenter.name
+.row
+  .col-md-6.col-sm-12
+    %label.list-group-item.d-flex.gap-3.p-3
+      %span.bi-globe
+      %span.pt-1.form-checked-content
+        %strong= t('dashboard.city_name')
+        %small.d-block.text-muted
+          = city_presenter.name
 
-  %label.list-group-item.d-flex.gap-3
-    %span.bi-globe
-    %span.pt-1.form-checked-content
-      %strong= t('dashboard.city_country')
-      %small.d-block.text-muted
-        = city_presenter.country
-
-  %label.list-group-item.d-flex.gap-3
-    %span.bi-thermometer-snow
-    %span.pt-1.form-checked-content
-      %strong= t('dashboard.city_temp_c')
-      %small.d-block.text-muted
-        = city_presenter.temp_c
-
-  %label.list-group-item.d-flex.gap-3
-    %span.bi-thermometer-snow
-    %span.pt-1.form-checked-content
-      %strong= t('dashboard.city_temp_f')
-      %small.d-block.text-muted
-        = city_presenter.temp_f
-
-  %label.list-group-item.d-flex.gap-3
-    %span.bi-compass
-    %span.pt-1.form-checked-content
-      %strong= t('dashboard.city_lat')
-      %small.d-block.text-muted
-        = city_presenter.lat
-
-  %label.list-group-item.d-flex.gap-3
-    %span.bi-compass-fill
-    %span.pt-1.form-checked-content
-      %strong= t('dashboard.city_log')
-      %small.d-block.text-muted
-        = city_presenter.log
+  .col-md-6.col-sm-12
+    %label.list-group-item.d-flex.gap-3.p-3
+      %span.bi-globe
+      %span.pt-1.form-checked-content
+        %strong= t('dashboard.city_country')
+        %small.d-block.text-muted
+          = city_presenter.country
+.row
+  .col-md-6.col-sm-12
+    %label.list-group-item.d-flex.gap-3.p-3
+      %span.bi-thermometer-snow
+      %span.pt-1.form-checked-content
+        %strong= t('dashboard.city_temp_c')
+        %small.d-block.text-muted
+          = city_presenter.temp_c
+  .col-md-6.col-sm-12
+    %label.list-group-item.d-flex.gap-3.p-3
+      %span.bi-thermometer-snow
+      %span.pt-1.form-checked-content
+        %strong= t('dashboard.city_temp_f')
+        %small.d-block.text-muted
+          = city_presenter.temp_f
+.row
+  .col-md-6.col-sm-12
+    %label.list-group-item.d-flex.gap-3.p-3
+      %span.bi-compass
+      %span.pt-1.form-checked-content
+        %strong= t('dashboard.city_lat')
+        %small.d-block.text-muted
+          = city_presenter.lat
+  .col-md-6.col-sm-12
+    %label.list-group-item.d-flex.gap-3.p-3
+      %span.bi-compass-fill
+      %span.pt-1.form-checked-content
+        %strong= t('dashboard.city_log')
+        %small.d-block.text-muted
+          = city_presenter.log

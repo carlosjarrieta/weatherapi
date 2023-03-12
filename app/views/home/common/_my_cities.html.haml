@@ -1,22 +1,10 @@
 .list-group.w-auto
-  %a.list-group-item.list-group-item-action.d-flex.gap-3.py-3{"aria-current" => "true", :href => "#"}
-    %img.rounded-circle.flex-shrink-0{:alt => "twbs", :height => "32", :src => "https://github.com/twbs.png", :width => "32"}/
-    .d-flex.gap-2.w-100.justify-content-between
-      %div
-        %h6.mb-0 List group item heading
-        %p.mb-0.opacity-75 Some placeholder content in a paragraph.
-      %small.opacity-50.text-nowrap now
-  %a.list-group-item.list-group-item-action.d-flex.gap-3.py-3{"aria-current" => "true", :href => "#"}
-    %img.rounded-circle.flex-shrink-0{:alt => "twbs", :height => "32", :src => "https://github.com/twbs.png", :width => "32"}/
-    .d-flex.gap-2.w-100.justify-content-between
-      %div
-        %h6.mb-0 Another title here
-        %p.mb-0.opacity-75 Some placeholder content in a paragraph that goes a little longer so it wraps to a new line.
-      %small.opacity-50.text-nowrap 3d
-  %a.list-group-item.list-group-item-action.d-flex.gap-3.py-3{"aria-current" => "true", :href => "#"}
-    %img.rounded-circle.flex-shrink-0{:alt => "twbs", :height => "32", :src => "https://github.com/twbs.png", :width => "32"}/
-    .d-flex.gap-2.w-100.justify-content-between
-      %div
-        %h6.mb-0 Third heading
-        %p.mb-0.opacity-75 Some placeholder content in a paragraph.
-      %small.opacity-50.text-nowrap 1w
+  - my_cities.each do|city|
+    - city_presenter = CityPresenter.new(self, city)
+    %a.list-group-item.list-group-item-action.d-flex.gap-3.py-3{"aria-current" => "true", :href => "#"}
+      %img.rounded-circle.flex-shrink-0{:alt => city_presenter.name, :height => "32", :src => city_presenter.icon, :width => "32"}/
+      .d-flex.gap-2.w-100.justify-content-between
+        %div
+          %h6.mb-0=city_presenter.name
+          %p.mb-0.opacity-75=city_presenter.country
+        %small.opacity-50.text-nowrap=city_presenter.created_at

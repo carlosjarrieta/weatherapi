@@ -21,7 +21,7 @@ module CityConverterHelper
         city.tz_id = data.city_info['location']['tz_id']
         city.temp_c = data.city_info['current']['temp_c']
         city.temp_f = data.city_info['current']['temp_f']
-        city.icon = data.city_info['current']['icon']
+        city.icon = data.city_info['current']['condition']['icon']
         if city.valid?
           city.save!
         end

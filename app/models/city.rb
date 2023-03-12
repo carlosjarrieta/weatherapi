@@ -30,9 +30,9 @@
 #
 class City < ApplicationRecord
   belongs_to :user
-  has_many :city_users, dependent: :destroy
+  has_and_belongs_to_many :users
 
-  validate :country, :icon, :lat, :lon, :localtime, :name, :region, :temp_c, :temp_f, :tz_id
+  validates :country, :icon, :lat, :lon,  :name, :region, :temp_c, :temp_f, :tz_id, presence: true
 
   before_create :downcase_name_search
   after_create_commit :send_notification
@@ -42,7 +42,7 @@ class City < ApplicationRecord
   end
 
   def send_notification
-    ActionCable.server.broadcast 'city_channel',{
+    ActionCable.server.broadcast "city_channel_#{self.user_id}",{
                                  message: I18n.t('dashboard.city_add', user:self.user.name, city: self.name),
                                  date: self.created_at}
   end

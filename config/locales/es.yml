@@ -24,3 +24,5 @@ es:
     city_log: 'Longitud'
     city_lat: 'Latitud'
     city_add: "%{user} a consultado la ciudad de %{city}"
+    my_cities: 'Mis búsquedas'
+    another_cities: 'Las búsquedas de otros usuarios'

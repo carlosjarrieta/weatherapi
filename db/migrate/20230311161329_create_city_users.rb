@@ -1,9 +1,8 @@
 class CreateCityUsers < ActiveRecord::Migration[7.0]
   def change
-    create_table :city_users do |t|
-      t.references :city, null: false, foreign_key: true
-      t.references :user, null: false, foreign_key: true
-
+    create_table :cities_users do |t|
+      t.belongs_to :city, null: false
+      t.belongs_to :user, null: false
       t.timestamps
     end
   end
