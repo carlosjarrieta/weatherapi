@@ -1,14 +1,17 @@
-.container.pb-3
-  .d-grid.gap-3{:style => "grid-template-columns: 1fr 2fr;"}
-    .bg-light.border.rounded-3
-      = render partial: 'home/common/form'
-    .bg-light.border.rounded-3
-      = render partial: 'home/common/cityinfo'
-.container.pb-3
-  %hr
-  %h2.text-danger= t('dashboard.logs')
-  .row
-    .col-md-12.col-sm-12
-
-
-
+%div{"data-controller" => "home", "data-home-userid-value" => current_user.id}
+  .container.pb-3
+    .d-grid.gap-3{:style => "grid-template-columns: 1fr 2fr;"}
+      .bg-light.border.rounded-3
+        = render partial: 'home/common/form'
+      .bg-light.border.rounded-3
+        = turbo_frame_tag 'city_info'
+  .container.pb-3
+    %hr
+    .row
+      .col-md-6.col-sm-12
+        %h5.text-muted= t('dashboard.my_cities')
+        = turbo_frame_tag 'my_searchs' do
+          = render partial: 'home/common/my_cities', locals: {my_cities: @my_cities}
+      .col-md-6.col-sm-12
+        %h5.text-muted= t('dashboard.another_cities')
+        = render partial: 'cities_users/cities_user'

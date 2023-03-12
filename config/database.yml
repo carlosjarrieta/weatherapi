@@ -15,10 +15,3 @@ development:
 test:
   <<: *default
   database: weatherapi_test
-
-
-production:
-  <<: *default
-  database: weatherapi_production
-  username: weatherapi
-  password: <%= ENV["WEATHERAPI_DATABASE_PASSWORD"] %>

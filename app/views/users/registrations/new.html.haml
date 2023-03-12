@@ -13,9 +13,6 @@
       = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: t('login.password'), class:'form-control'
       = label_tag :password_confirmation, t('sign_up.confirm_password')
     .form-floating
-      = f.text_field :username, class: 'form-control', required: true, placeholder: t('sign_up.username')
-      = label_tag :username, t('sign_up.username')
-    .form-floating
       = f.text_field :name, class: 'form-control', required: true, placeholder: t('sign_up.name')
       = label_tag :name, t('sign_up.name')
     .checkbox.mb-3
