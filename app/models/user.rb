@@ -29,7 +29,18 @@ class User < ApplicationRecord
 
   has_and_belongs_to_many :cities
 
-  validates :email, :name, presence: true
-  validates_uniqueness_of :email
+  validates :name, presence: true
+  validates :password, length: { minimum: 6 }
+  validates :email, presence: true, uniqueness: true,
+            format: {
+              with: /\A([\w+\-].?)+@[a-z\d\-]+(\.[a-z]+)*\.[a-z]+\z/i,
+              message: :invalid
+            }
+
+
+  def send_devise_notification(notification, *args)
+    devise_mailer.send(notification, self, *args).deliver_later
+  end
+
 
 end
