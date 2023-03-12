@@ -1,0 +1,9 @@
+.toast-container.position-fixed.bottom-0.end-0.p-3
+  #liveToast.toast{"aria-atomic" => "true", "aria-live" => "assertive", :role => "alert"}
+    .toast-header
+      %span.bi-bug.text-danger.pe-2
+      %strong.me-auto Upps!
+      %small= Time.now
+      %button.btn-close{"aria-label" => "Close", "data-bs-dismiss" => "toast", :type => "button"}
+    .toast-body
+      %strong.text-danger= t('dashboard.city_nil')

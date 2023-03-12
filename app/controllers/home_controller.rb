@@ -1,5 +1,6 @@
 class HomeController < ApplicationController
   before_action :authenticate_user!
+
   def index
     session["user_id"] = current_user.id
     get_my_cities
@@ -12,7 +13,13 @@ class HomeController < ApplicationController
       if @city.nil?
         @city = CityConverterHelper::Convert.new(Api::WeartherApi::Current.new(name_search), name_search).call
       end
-      CitiesUser.create(city: @city, user: current_user)
+      if @city.nil?
+        ActionCable.server.broadcast "city_channel", {
+          message: I18n.t('dashboard.city_nil'),
+          date: Time.now, user_id: current_user.id, city_nil: true }
+      else
+        CitiesUser.create(city: @city, user: current_user)
+      end
     end
 
     get_my_cities
