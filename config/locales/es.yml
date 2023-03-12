@@ -17,6 +17,7 @@ es:
 
   dashboard:
     submit: 'Buscar'
+    city_nil: "No se encontro la ciudad"
     city_name: 'Ciudad'
     city_country: 'Pais'
     city_temp_c: 'Grados centigrados'

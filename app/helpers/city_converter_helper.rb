@@ -9,7 +9,7 @@ module CityConverterHelper
     end
 
     def call
-      unless @data.city_info.empty?
+      if !data.city_info.empty? && !data.city_info['error'].present?
         city = City.new
         city.name_search = name_search
         city.name = data.city_info['location']['name']
