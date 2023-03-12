@@ -15,7 +15,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_161329) do
   enable_extension "plpgsql"
 
   create_table "cities", force: :cascade do |t|
-    t.bigint "user_id", null: false
     t.string "name_search", null: false
     t.string "name", null: false
     t.string "region"
@@ -23,7 +22,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_161329) do
     t.float "lat"
     t.float "lon"
     t.string "tz_id"
-    t.datetime "localtime"
     t.float "temp_c"
     t.float "temp_f"
     t.string "icon"
@@ -31,7 +29,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_161329) do
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_cities_on_name", unique: true
     t.index ["name_search"], name: "index_cities_on_name_search", unique: true
-    t.index ["user_id"], name: "index_cities_on_user_id"
   end
 
   create_table "cities_users", force: :cascade do |t|
@@ -60,5 +57,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_03_11_161329) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "cities", "users"
 end

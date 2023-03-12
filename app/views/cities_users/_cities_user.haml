@@ -1,12 +1,8 @@
-%table.table
+%table#cities_users.table.table-striped.table-hover
   %thead
-    %th Ciudad
-    %th Usuario
-  %tbody
     %tr
-      %td
-        Hola
-    -# - CitiesUser.where.not(user_id: current_user.id).each do |cu|
-    -#   %tr{id: "tr-#{cu.id}"}
-    -#     %td=cu.city.name
-    -#     %td=cu.user.name
+      %th{scope:'col'}
+        = t('table.date')
+      %th{scope:'col'}
+        = t('table.city')
+  %tbody{id:'tbody-cities-users'}

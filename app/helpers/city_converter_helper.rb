@@ -2,7 +2,7 @@ module CityConverterHelper
   class Convert
     attr_reader :data, :name_search, :user_id
 
-    def initialize(json, name_search, user_id)
+    def initialize(json, name_search)
       @data = json
       @name_search = name_search
       @user_id = user_id
@@ -11,7 +11,6 @@ module CityConverterHelper
     def call
       unless @data.city_info.empty?
         city = City.new
-        city.user_id = user_id
         city.name_search = name_search
         city.name = data.city_info['location']['name']
         city.region = data.city_info['location']['region']
@@ -23,7 +22,7 @@ module CityConverterHelper
         city.temp_f = data.city_info['current']['temp_f']
         city.icon = data.city_info['current']['condition']['icon']
         if city.valid?
-          city.save!
+          city.save
         end
         city
       end

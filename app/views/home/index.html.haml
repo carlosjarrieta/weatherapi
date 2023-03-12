@@ -14,6 +14,4 @@
           = render partial: 'home/common/my_cities', locals: {my_cities: @my_cities}
       .col-md-6.col-sm-12
         %h5.text-muted= t('dashboard.another_cities')
-        = turbo_stream_from 'anoter_search'
-        #anoter_search
-          = render partial: 'cities_users/cities_user'
+        = render partial: 'cities_users/cities_user'

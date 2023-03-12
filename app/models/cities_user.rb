@@ -14,11 +14,11 @@
 #  index_cities_users_on_user_id  (user_id)
 #
 class CitiesUser < ApplicationRecord
-  after_create_commit { broadcast_update_to 'anoter_search' }
-
+  include Notificable
   belongs_to :city
   belongs_to :user
 
   validates :user_id, :city_id, presence: true
 
+  scope :all_except, ->(_user_id) { where.not(user_id: _user_id) }
 end

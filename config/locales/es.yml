@@ -26,3 +26,8 @@ es:
     city_add: "%{user} a consultado la ciudad de %{city}"
     my_cities: 'Mis búsquedas'
     another_cities: 'Las búsquedas de otros usuarios'
+
+  table:
+    user: "Usuario"
+    city: "Ciudad"
+    date: "Fecha"

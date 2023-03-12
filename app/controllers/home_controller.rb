@@ -1,5 +1,7 @@
 class HomeController < ApplicationController
+  before_action :authenticate_user!
   def index
+    session["user_id"] = current_user.id
     get_my_cities
   end
 
@@ -8,9 +10,9 @@ class HomeController < ApplicationController
       name_search = params[:name_city].downcase
       @city = City.where("name_search like ?", "%#{name_search}%").first
       if @city.nil?
-        @city = CityConverterHelper::Convert.new(Api::WeartherApi::Current.new(name_search), name_search, current_user.id).call
+        @city = CityConverterHelper::Convert.new(Api::WeartherApi::Current.new(name_search), name_search).call
       end
-      save_city_search()
+      CitiesUser.create(city: @city, user: current_user)
     end
 
     get_my_cities
@@ -21,12 +23,7 @@ class HomeController < ApplicationController
     end
   end
 
-  private
-  def save_city_search
-    CitiesUser.create(city: @city, user: current_user)
-  end
-
   def get_my_cities
-    @my_cities = current_user.cities.order(created_at: :desc).limit(10)
+    @my_cities = current_user.cities.order(created_at: :desc).limit(5)
   end
 end
