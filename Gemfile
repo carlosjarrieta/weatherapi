@@ -80,5 +80,3 @@ gem "redis", "~> 4.0"
 gem 'sidekiq', '~> 7.0', '>= 7.0.6'
 gem "devise", "~> 4.9"
 gem "i18n", "~> 1.12"
-
-

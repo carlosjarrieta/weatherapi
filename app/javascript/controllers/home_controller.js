@@ -22,8 +22,8 @@ export default class extends Controller {
         console.log(data)
         if (data.city_nil == false) {
           if (data.user_id != user_id) {
-            var table = document.getElementById("tbody-cities-users");
-            var row = table.insertRow(0);
+            var tbody = document.getElementById("tbody-cities-users");
+            var row = tbody.insertRow(0);
             var cell1 = row.insertCell(0);
             var cell2 = row.insertCell(1);
             cell1.innerHTML = data.date
